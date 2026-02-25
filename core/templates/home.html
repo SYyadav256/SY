@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <link rel="stylesheet" href="{% static 'CSS/home.css' %}?v=2">
+</head>
+<body>
+
+{% include 'header.html' %}
+
+<!-- ===== Hero Section ===== -->
+<section class="hero">
+    <div class="hero-content">
+
+        <div class="hero-image">
+            <img src="{% static 'image/ss.jpeg' %}" alt="Profile Image">
+        </div>
+
+        <h1>Hi, I'm <span>Shriyash Yadav</span></h1>
+        <hr>
+        <p>Django Developer | Python Enthusiast | Web Developer</p>
+
+        <a href="{% static 'files/SHRIYASH MAIN.pdf' %}"
+           class="SY"
+           target="_blank"
+           download>
+           Download Resume
+        </a>
+
+    </div>
+</section>
+
+{% include 'footer.html' %}
+
+</body>
+</html>

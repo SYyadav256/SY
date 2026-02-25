@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'CSS/project.css' %}?v=6">
+</head>
+<body>
+
+{% include 'header.html' %}
+
+<div class="page-wrapper">
+
+    <main class="page-content">
+
+        <h1 class="page-title">My Projects</h1>
+
+        <section class="projects">
+
+            {% if projects %}
+                {% for project in projects %}
+                <article class="card">
+
+                    {% if project.image %}
+                    <div class="image-box">
+                        <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                    </div>
+                    {% endif %}
+
+                    <h3>{{ project.title }}</h3>
+
+                    <p>{{ project.description }}</p>
+
+                    {% if project.tech_stack %}
+                    <div class="tech">
+                        <strong>Tech Stack:</strong> {{ project.tech_stack }}
+                    </div>
+                    {% endif %}
+
+                    {% if project.github_link %}
+                    <a href="{{ project.github_link }}"
+                       target="_blank"
+                       class="github-btn">
+                       View on GitHub
+                    </a>
+                    {% endif %}
+
+                </article>
+                {% endfor %}
+            {% else %}
+                <p class="no-projects">No projects added yet.</p>
+            {% endif %}
+
+        </section>
+
+    </main>
+
+</div>
+
+{% include 'footer.html' %}
+
+</body>
+</html>

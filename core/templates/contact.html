@@ -1,0 +1,82 @@
+{% load static %}
+{% include 'header.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Shriyash Yadav</title>
+
+    <link rel="stylesheet" href="{% static 'CSS/contact.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<section class="contact">
+
+    <div class="contact-container">
+
+        <!-- LEFT: CONTACT FORM -->
+        <div class="contact-form-box">
+            <h1>Feel free to reach out to me</h1>
+            <p>I’m always open to discussing new projects, opportunities, or collaborations.</p>
+
+            <form method="POST">
+                {% csrf_token %}
+                {% if messages %}
+    {% for message in messages %}
+        <div class="success-msg">
+            <i class="fas fa-check-circle"></i>
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+                <div class="input-group">
+                    <input type="text" placeholder="Your Name" required name="name">
+                </div>
+
+                <div class="input-group">
+                    <input type="email" placeholder="Your Email" required name="email">
+                </div>
+
+                <div class="input-group">
+                    <input type="tel" placeholder="Contact Number" maxlength="10" required name="contact">
+                </div>
+
+                <div class="input-group">
+                    <textarea placeholder="Your Message" rows="5" required name="message"></textarea>
+                </div>
+
+                <button type="submit" class="send-btn">Send Message</button>
+            </form>
+        </div>
+
+        <!-- RIGHT: SOCIAL INFO -->
+        <div class="contact-info-box">
+            <h2>Connect with me</h2>
+            <p>You can also find me here</p>
+
+            <div class="social-icons">
+                <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+                <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <a href="https://mail.google.com/mail/?view=cm&to=shriyashyadav12@gmail.com"
+                   target="_blank" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+{% include 'footer.html' %}
+</html>

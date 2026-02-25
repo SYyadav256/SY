@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #020617, #0f172a);
+    color: #ffffff;
+}
+
+/* Layout */
+.about {
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    max-width: 950px;
+    width: 100%;
+}
+
+/* Main heading */
+.about-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-heading h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.about-heading p {
+    color: #94a3b8;
+    font-size: 16px;
+}
+
+/* Block cards */
+.block {
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 35px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.block:hover {
+    transform: translateY(-6px);
+}
+
+/* Lighter colors than background */
+.block-1 {
+    background: #020617;
+    background: linear-gradient(145deg, #020617, #020617);
+    border-left: 6px solid #38bdf8;
+}
+
+.block-2 {
+    background: #020617;
+    background: linear-gradient(145deg, #020617, #020617);
+    border-left: 6px solid #22c55e;
+}
+
+.block-3 {
+    background: #020617;
+    background: linear-gradient(145deg, #020617, #020617);
+    border-left: 6px solid #facc15;
+}
+
+.block-4 {
+    background: #020617;
+    background: linear-gradient(145deg, #020617, #020617);
+    border-left: 6px solid #a855f7;
+}
+
+/* Headings */
+.section h2 {
+    font-size: 26px;
+    margin-bottom: 14px;
+}
+
+/* Text */
+.section p {
+    color: #cbd5f5;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* Tech stack */
+.tech-stack {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+
+    overflow-x: auto;          /* KEY */
+    padding-bottom: 10px;
+}
+
+/* Hide scrollbar (optional, looks clean) */
+.tech-stack::-webkit-scrollbar {
+    height: 6px;
+}
+
+.tech-stack::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 10px;
+}
+
+.tech-item {
+    min-width: 110px;          /* prevents shrinking */
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 18px 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-item img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+.tech-item span {
+    font-size: 14px;
+    color: #cbd5f5;
+}
+
+.tech-item:hover img {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+
+/* List */
+.list {
+    list-style: none;
+}
+
+.list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    color: #cbd5f5;
+}
+
+.list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #38bdf8;
+}
+
+/* Resume button */
+.resume-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.resume-btn {
+    padding: 15px 36px;
+    background: #38bdf8;
+    color: #020617;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.resume-btn:hover {
+    background: #0ea5e9;
+    transform: translateY(-4px);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .about-heading h1 {
+        font-size: 30px;
+    }
+
+    .section h2 {
+        font-size: 22px;
+    }
+
+    .block {
+        padding: 22px;
+    }
+}
+
+/* Download Resume Button */
+.SY{
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #0d6efd, #084298);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.35);
+}
+
+/* Hover Effect */
+.SY:hover{
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #084298, #052c65);
+    box-shadow: 0 12px 30px rgba(13, 110, 253, 0.5);
+}
+
+/* Click Effect */
+.SY:active{
+    transform: scale(0.95);
+    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+}
+
+/* Focus (Accessibility) */
+.SY:focus{
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.4);
+}

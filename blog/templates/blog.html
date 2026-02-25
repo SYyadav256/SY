@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blogs & Certifications</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'CSS/blog.css' %}">
+</head>
+<body>
+    {% include 'header.html' %}
+
+<main class="blog-page">
+
+    <h1 class="blog-title">Blogs & Certifications</h1>
+
+    <div class="blog-grid">
+        {% for blog in blogs %}
+        <div class="blog-card">
+
+            {% if blog.certificate_image %}
+            <div class="blog-file">
+                <img src="{{ blog.certificate_image.url }}" alt="{{ blog.title }}">
+            </div>
+            {% endif %}
+
+            <h2>{{ blog.title }}</h2>
+
+            {% if blog.time_period %}
+            <div class="blog-time">{{ blog.time_period }}</div>
+            {% endif %}
+
+            <p class="blog-desc">{{ blog.description }}</p>
+
+            <div class="blog-learn">
+                <strong>What I Learned:</strong>
+                <p>{{ blog.learning }}</p>
+            </div>
+
+        </div>
+        {% empty %}
+        <p class="no-blog">No blogs added yet.</p>
+        {% endfor %}
+    </div>
+
+</main>
+
+
+{% include 'footer.html' %}
+</body>
+</html>

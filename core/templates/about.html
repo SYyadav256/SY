@@ -1,0 +1,98 @@
+{% load static %}
+{% include 'header.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Shriyash Yadav</title>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+</head>
+<body>
+<section class="about">
+    <div class="about-container">
+        <!-- MAIN HEADING -->
+        <div class="about-heading">
+            <h1>About Me</h1>
+            <p>Get to know who I am and what I work with</p>
+        </div>
+
+        <!-- WHO I AM -->
+        <div class="section block block-1">
+            <h2>Who I Am</h2>
+            <p>
+                I am <strong>Shriyash Yadav</strong>, a Software Engineer and
+                <strong>Django Backend Developer</strong> with hands-on experience
+                in building scalable, secure, and database-driven web applications
+                using Python and Django.
+            </p>
+        </div>
+
+        <!-- TECH STACK -->
+        <div class="section block block-2">
+            <h2>Tech Stack</h2>
+
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <img src="{% static 'image/I7.jpeg' %}" alt="Python">
+                    <span>Python</span>
+                </div>
+                <div class="tech-item">
+                    <img src="{% static 'image/I6.jpeg' %}" alt="Django">
+                    <span>Django</span>
+                </div>
+                <div class="tech-item">
+                    <img src="{% static 'image/I5.jpeg' %}" alt="HTML">
+                    <span>HTML</span>
+                </div>
+                <div class="tech-item">
+                    <img src="{% static 'image/I4.jpeg' %}" alt="GitHub">
+                    <span>GitHub</span>
+                </div>
+                <div class="tech-item">
+                    <img src="{% static 'image/I1.jpeg' %}" alt="NumPy">
+                    <span>NumPy</span>
+                </div>
+                <div class="tech-item">
+                    <img src="{% static 'image/I2.jpeg' %}" alt="Pandas">
+                    <span>Pandas</span>
+                </div>
+                <div class="tech-item">
+                    <img src="{% static 'image/I3.jpeg'' %}" alt="SQL">
+                    <span>Git</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- INTERNSHIP & TRAINING -->
+        <div class="section block block-3">
+            <h2>Internship & Training</h2>
+            <ul class="list">
+                <li>Django Backend Development Training</li>
+                <li>Python Programming & OOP Concepts</li>
+                <li>Database Management using SQL</li>
+            </ul>
+        </div>
+
+        <!-- EXPERIENCE -->
+        <div class="section block block-4">
+            <h2>Experience</h2>
+            <p>
+                Entry-level Software Engineer with practical experience in
+                Django-based projects, REST APIs, authentication systems,
+                and backend-focused web development.
+            </p>
+        </div>
+
+        <!-- DOWNLOAD RESUME (NOT A BLOCK) -->
+        <div class="resume-section">
+             <a href="{% static 'files/SHRIYASH MAIN.pdf' %}"  target="_blank">
+    <button class="SY">Download Resume</button>    
+</a>
+        </div>
+
+    </div>
+</section>
+</body>
+{% include 'footer.html' %}
+</html>
